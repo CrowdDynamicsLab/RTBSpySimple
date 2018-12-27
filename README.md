@@ -1,7 +1,7 @@
 # Help us track the trackers
-This is a Chrome extension that you can install to help us collect some data.
+This is a Chrome extension you can install to help us collect some data.
 
-For now we just want to see a reasonable sized dataset to look at manually in order to make sure we have a good sense of which ad exchanges and ad creative servers exist in the wild so that we can build parsers for them. 
+For now we just want to see a small dataset of real browsing. We will look at this data manually in order to make sure we have a good sense of which ad exchanges and ad creative servers exist in the wild.
 
 We will then modify the extension to be much more selective about what data it collects based on these findings. To see what data we collect, look below.
 
