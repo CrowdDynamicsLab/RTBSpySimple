@@ -16,8 +16,8 @@ git clone git@github.com:CrowdDynamicsLab/RTBSpySimple.git
 ```
 chrome://extensions
 ```
-3) In the upper right of this page make sure developer mode is enabled
-4) If it is, click on Load unpacked
+3) There's a blue header at the top of this page. All the way to the right on this header, enable developer mode
+4) Just below the blue header on the left, click Load unpacked
 5) Navigate to the **folder** containing the gihub repo you cloned abovein step 1
 
 That's it. To remove the extension click remove.
