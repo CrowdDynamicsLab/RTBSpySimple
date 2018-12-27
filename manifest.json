@@ -1,0 +1,22 @@
+{
+
+  "manifest_version": 2,
+  "name": "Simple RTBSpy",
+  "version": "1.0",
+  "description": "Spying on ad auctions",  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery.js", "spyMain.js"],
+      "run_at": "document_start"      
+    }
+  ],
+  "permissions": [
+    "<all_urls>", "tabs", "webRequest", "webNavigation"
+  ],  
+  "background": {
+    "scripts": ["jquery.js","spyBackground.js"],
+    "persistent": true
+  },
+  "web_accessible_resources": ["injected_scripts/injected.js", "injected_scripts/inject_bmi.js", "injected_scripts/inject_all_frame.js"]
+}
