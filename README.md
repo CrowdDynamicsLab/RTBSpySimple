@@ -18,7 +18,7 @@ chrome://extensions
 ```
 3) There's a blue header at the top of this page. All the way to the right on this header, enable developer mode
 4) Just below the blue header on the left, click Load unpacked
-5) Navigate to the **folder** containing the gihub repo you cloned abovein step 1
+5) Navigate to the **folder** containing the github repo you cloned above in step 1
 
 That's it. To remove the extension click remove.
 
