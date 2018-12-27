@@ -23,7 +23,7 @@ chrome://extensions
 That's it. To remove the extension click remove.
 
 # What it logs
-It tracks and posts to a logging server all of the following information. 
+It tracks and posts to a logging server all of the following information:
 
 For every [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) we log url making the request, the url the request is made to, the response body, response headers, request headers, response type, request start time and request end time.
 
