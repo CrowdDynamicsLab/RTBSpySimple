@@ -31,8 +31,8 @@ chrome.webRequest.onCompleted.addListener(function(details) {
   }, function(tabs) {
     var tab = tabs[0];
     var url = tab.url;
-    var urlHost = getLocation(url).hostname.split('.').slice('-2').join('.')
-    var detailsurlHost = getLocation(details.url).hostname.split('.').slice('-2').join('.')
+    var urlHost = getLocation(url).hostname.split('.').slice('1').join('.')
+    var detailsurlHost = getLocation(details.url).hostname.split('.').slice('1').join('.')
 
     console.log(url)
     console.log(urlHost)
