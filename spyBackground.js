@@ -8,6 +8,11 @@ var imgs = [] // images and scripts
 /*******************************
  *** Listen for web requests ***
  *******************************/
+var getLocation = function(href) {
+    var l = document.createElement("a");
+    l.href = href;
+    return l;
+};
 
 chrome.webRequest.onCompleted.addListener(function(details) {  
 
@@ -18,7 +23,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
   // ignore anything that's not an image
   if(details.type != 'image') {
     return;
-  }
+  }  
   // ignore tracking pixels
   chrome.tabs.query({
     active: true,
@@ -26,7 +31,20 @@ chrome.webRequest.onCompleted.addListener(function(details) {
   }, function(tabs) {
     var tab = tabs[0];
     var url = tab.url;
+    var urlHost = getLocation(url).hostname.split('.').slice('-2').join('.')
+    var detailsurlHost = getLocation(details.url).hostname.split('.').slice('-2').join('.')
+
+    console.log(url)
+    console.log(urlHost)
+    console.log(details.url)
+    console.log(detailsurlHost)
+    if(urlHost == detailsurlHost) {
+      console.log('ignoring')
+      return;
+    }
     var lngth = 0;
+    
+    
     for(var i = 0; i < details.responseHeaders.length; i++) {
       var header = details.responseHeaders[i];
       if(header.name == 'content-length') {
@@ -47,8 +65,8 @@ chrome.webRequest.onCompleted.addListener(function(details) {
         timestamp: Date.now()
 
       }
-      console.log(img_data)
-      console.log(details)
+      //console.log(img_data)
+      //console.log(details)
       imgs.push(img_data)  
     }
   });
